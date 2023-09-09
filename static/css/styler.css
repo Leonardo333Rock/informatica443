@@ -1,0 +1,129 @@
+.bg-body{
+    /* background-image: linear-gradient(to bottom right,rgb(191, 190, 189), rgb(252, 249, 249)) ; */
+    background-image: url('../img/bg/bg.jpg') ;
+
+
+}
+
+.promo{
+    color: aliceblue;
+}
+
+header{
+    display:flex ;
+    align-items:center;
+    justify-content: center;
+}
+
+.form-label{
+    font-weight: bold;
+}
+
+.card-produto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card{
+    margin-top: 10px;
+}
+
+.login-card{
+    height: 300px;
+    width: 400px;
+    border: 1px solid #beb6b6;
+    padding: 5px;
+    border-radius: 5px ;
+    background-color: orange;
+   
+}
+
+.body{
+    display: flex;
+    justify-content:center;
+    align-items:center ;
+    width: 100%;
+    height: 100%;
+}
+
+.space{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+
+.car-img{
+    height: 280;
+    width: 120;
+}
+
+.img-promo{
+    border-radius: 20px;
+}
+
+.div-conteiner{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+
+.car{
+    background-color: #ddd;
+    width: 45px;
+    transition:linear 1s;
+    border-radius: 10px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+    
+}
+
+.car:hover{
+    background-color: #df830a;
+
+}
+
+
+.qt{
+    text-align: center;
+    background-color: green;
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    border: 1px solid; 
+    border-radius: 50px; 
+    color: #000; 
+    width: 19px; 
+    height: 19px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.div_car{
+    height: 45px;
+    width: 45px;
+}
+
+
+.sli{
+    border-radius: 5px;
+}
+
+.valor{
+    color: red;
+    font-weight: bold;
+}
+
+.v_produto{
+    color: green;
+    font-weight: bold;
+    font-family:"Arial";
+    font-size: 18px;
+}
+
+.color-label{
+    color: aliceblue;
+}

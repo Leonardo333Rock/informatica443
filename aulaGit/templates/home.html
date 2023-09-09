@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styler.css' %}">
+    <title>{%block title %}Novatek Informatica{% endblock %}</title>
+</head>
+<body class="bg-body">
+    <header class="container d-flex flex-column my-3" style="height: 80px;">
+        <h1 class="font-weight-bold h1" style="color: orangered; text-shadow:3px 3px 7px#000;">Nova<span style="color: aliceblue;">tek</span></h1>
+        <p style="color: aliceblue;" class="h6">INFORMÁTICA</p>
+        <a href="/carrinho" class="car border ml-auto p-2"><img class="w-100" src="../static/img/carrinho.png" alt=""><span id="carro" class="qt"></span></a>
+      </header>
+    <div class="container" style="margin-bottom: 20px;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Inicio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/pagina_de_login">Login<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/servicos">Serviços</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Produtos
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- 
+                    <a class="dropdown-item" href="/produto/caixa-de-som-bluetooth">Caixa de som Bluetooth</a>
+                    <a class="dropdown-item" href="/produto/caixa-de-som-portatil">Caixa de som portátil</a>
+                    <a class="dropdown-item" href="/produto/cabo-de-rede">Cabo de rede</a>
+                    <a class="dropdown-item" href="/produto/cabo-hdmi">Cabo HDMI</a>
+                    <a class="dropdown-item" href="/produto/cartao-de-memoria">Cartão de memória</a>
+                    <a class="dropdown-item" href="/produto/cooler">Cooler</a>
+                    <a class="dropdown-item" href="/produto/desktop">Desktop</a>
+                    <a class="dropdown-item" href="/produto/estabilizador">Estabilizador</a>
+                    <a class="dropdown-item" href="/produto/hd-externo">HD externo</a>
+                    <a class="dropdown-item" href="/produto/hd-interno">HD interno</a>
+                    <a class="dropdown-item" href="/produto/scanner">HD SSD/M2</a>
+                    <a class="dropdown-item" href="/produto/hub-usb">Hub USB</a>
+                    <a class="dropdown-item" href="/produto/microfone">Microfone</a>
+                    <a class="dropdown-item" href="/produto/mousepad">Mousepad</a> -->
+                    <a class="dropdown-item" href="/produto/adaptador">Adaptador</a>
+                    <a class="dropdown-item" href="/produto/adaptador-wifi">Adaptador Wi-fi</a>
+                    <a class="dropdown-item" href="/produto/base-para-notebook">Base para notebook</a>
+                    <a class="dropdown-item" href="/produto/bonecos">Bonecos</a>
+                    <a class="dropdown-item" href="/produto/cadeira">Cadeira</a>
+                    <a class="dropdown-item" href="/produto/caixa-de-som">Caixa de som</a>
+                    <a class="dropdown-item" href="/produto/fonte-de-alimentacao">Fonte de alimentação</a>
+                    <a class="dropdown-item" href="/produto/gabinete">Gabinete</a>
+                    <a class="dropdown-item" href="/produto/headset">Headset</a>
+                    <a class="dropdown-item" href="/produto/impressora">Impressora</a>
+                    <a class="dropdown-item" href="/produto/memoria-ram">Memória RAM</a>
+                    <a class="dropdown-item" href="/produto/mouse">Mouse</a>
+                    <a class="dropdown-item" href="/produto/monitor">Monitor</a>
+                    <a class="dropdown-item" href="/produto/no-break">No-Break</a>
+                    <a class="dropdown-item" href="/produto/notebook">Notebook</a>
+                    <a class="dropdown-item" href="/produto/teclado">Teclado</a>
+                    <a class="dropdown-item" href="/produto/roteador">Roteador</a>
+                    <a class="dropdown-item" href="/produto/pen-drive">Pen drive</a>
+                    <a class="dropdown-item" href="/produto/pc-completo">PC completo</a>
+                    <a class="dropdown-item" href="/produto/placa-mae">Placa-mãe</a>
+                    <a class="dropdown-item" href="/produto/processador">Processador</a>
+                    <a class="dropdown-item" href="/produto/switch">Switch</a>
+                    <a class="dropdown-item" href="/produto/ssd">SSD</a>
+                    <a class="dropdown-item" href="/produto/webcam">Webcam</a>
+                    
+                    <!-- 
+                    
+                    <a class="dropdown-item" href="/produto/placa-de-video">Placa de vídeo</a>
+                    
+                    
+                    <a class="dropdown-item" href="/produto/projetor">Projetor</a>
+                    
+                    <a class="dropdown-item" href="/produto/smartphone">Smartphone</a>
+                     -->
+
+                    <div class="dropdown-divider"></div>
+                    <a hidden class="dropdown-item" href="#">Mais</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" hidden href="#">Cadastro</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'busca' %}">  
+                {% csrf_token %}
+                <input name="busca" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              </form>
+            </div>
+          </nav>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    
+    {% block content %}
+    <div class="container border border-dark mb-4 sli">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active w-100">
+              <img class="ml-5 d-inline w-50 p-2 img-promo" src="../static/img/cadeira/cadeira193.jpg" alt="First slide">
+              <div class="m-5 d-inline-block promo"> 
+                <h1 class="h3">PROMOÇÃO</h1>
+                <p class="h6">CADEIRA GAMER THUNDERX3 BC3 VM</p>
+                <p class="">Valor: <span class="valor" >1.980,00</span></p>
+              </div> 
+          </div>
+          <div class="carousel-item w-100">
+              <img class="ml-5 d-inline w-50 p-2 img-promo" src="../../static/img/mouse/mouse21.jpg" alt="Second slide">
+              <div class="m-5 d-inline-block promo">
+                <h1 class="h3">PROMOÇÃO</h1>
+                <p class="h6">MOUSE GAMER REDRAGON COBRA</p>
+                <p class="h6" >RGB 7 BOTÕES 10000DPI LUNAR WHITE</p>
+                <p>Valor: <span class="valor" >190,00</span></p>
+              </div>
+          </div>
+          <div class="carousel-item w-100">
+              <img class="ml-5 d-inline w-50 p-2 img-promo" src="../../static/img/headset/headset47.jpg" alt="Third slide">
+              <div class="m-5 d-inline-block promo">
+                <h1 class="h3">PROMOÇÃO</h1>
+                <p class="h6">HEADSET FORTREK PRO H1+7.1 RGB</p>
+                <p>Valor: <span class="valor" >280,00</span></p>
+              </div>
+          </div>
+          <div class="carousel-item w-100">
+            <img class="ml-5 d-inline w-50 p-2 img-promo" src="../../static/img/bonecos/bonecos137.jpg" alt="Third slide">
+              <div class="m-5 d-inline-block promo">
+                <h1 class="h3">PROMOÇÃO</h1>
+                <p class="h6">BONECO ANIMES DRAGON BALL REI COLD</p>
+                <p class="h6">FIGURA REI COLD ESTATUETA 26C</p>
+                <p>Valor: <span class="valor" >340,00</span></p>
+              </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Bem Vindo!</h1>
+        <p class="lead">Novatek Informática: Inovando soluções tecnológicas para impulsionar o seu sucesso.</p>
+        <hr class="my-4">
+        <p>Olá a todos! Bem-vindos à Novatek Informática, onde a inovação encontra a tecnologia. Somos uma empresa comprometida em fornecer soluções informáticas de ponta, impulsionando o crescimento e o sucesso dos nossos clientes. Estamos aqui para transformar desafios em oportunidades e tornar o futuro digital uma realidade. Junte-se a nós nessa jornada rumo à excelência tecnológica!</p>
+        <p class="lead">
+          <a hidden class="btn btn-primary btn-lg" href="#" role="button">Ver mais</a>
+        </p>
+      </div>
+    </div>
+
+    {% endblock %}
+    <footer class="text-center text-lg-start bg-dark text-light"  style="margin-top: 25px;">
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+          <span>Fale com algum de nossos vendendores:</span>
+        </div>
+        <div class="d-flex">
+          <a id="link_zap" href="#" class="me-4 text-reset">
+            <img class="" style="height: 60px; width: 45px;" src="../static/svg/whatsapp.svg"alt="">
+          </a>
+          <a href="https://instagram.com/novatekitz?igshid=MzRlODBiNWFlZA==" target="_blank" class="me-4 text-reset">
+            <img class="" style="height: 60px; width: 45px;" src="../static/svg/instagram.svg"alt="">
+          </a>
+        </div>
+
+      </section>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.27485180503!2d-47.48322692509622!3d-5.5261784549589095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c55fa8ef31b385%3A0x3952da16108e0c50!2sNovatek%20Inform%C3%A1tica!5e0!3m2!1spt-BR!2sbr!4v1693849405496!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+             
+            </div>
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>NOVATEK INFORMATICA LTDA
+              </h6>
+              <p>
+                Novatek Informática: Inovando soluções tecnológicas para impulsionar o seu sucesso.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Produtos
+              </h6>
+              <p>
+                <a href="/produto/bonecos" class="text-reset">Bonecos</a>
+              </p>
+              <p>
+                <a href="/produto/mouse" class="text-reset">Mouses</a>
+              </p>
+              <p>
+                <a href="/produto/headset" class="text-reset">Headsets</a>
+              </p>
+              <p>
+                <a href="/produto/teclado" class="text-reset">Teclados</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contato</h6>
+              <p><i class="fas fa-home me-3"></i> Imperatriz-MA, BR</p>
+              <p><i class="fas fa-home me-3"></i> Rua João Lisboa 611</p>
+
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                novatekinformatica@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> (99) 9 8414-6460</p>
+              <p><i class="fas fa-print me-3"></i> (99) 3523-4204</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2009 Copyright:
+        <a class="text-reset fw-bold" href="http://novatekinformatica.pythonanywhere.com/">Novatek.com</a>
+      </div>
+
+    </footer>
+
+<script src="{% static 'js/zap_link.js' %}"></script>
+<script src="{% static 'js/teste.js' %}"></script>
+<script src="{% static 'js/formatar_home.js' %}"></script>
+<script src="{% static 'js/req.js' %}"></script>
+<script>
+
+window.addEventListener('load',()=>{
+    const arr = JSON.parse(localStorage.getItem('produto'))
+    carro.innerHTML = arr.length
+})
+
+</script>
+</body> 
+</html>

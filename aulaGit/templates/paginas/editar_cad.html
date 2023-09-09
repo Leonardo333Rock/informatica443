@@ -1,0 +1,32 @@
+{% extends 'home.html'%}
+
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'editado_sucesso' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Nome</label>
+            <input class="form-control" type="text" id="formFile" name="nome" required value={{cliente.nome}}>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Email</label>
+            <input class="form-control" type="text" id="formFile" name="email" required value={{cliente.email}}>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Senha</label>
+            <input class="form-control" type="password" id="formFile" name="senha" required value={{cliente.senha}}>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Telefone</label>
+            <input class="form-control" type="text" id="formFile" name="telefone" required value={{cliente.telefone}}>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" type="text" id="formFile" name="id" required value={{cliente.id}} hidden>
+        </div>
+
+        <button type="submit" class="btn btn-success">Atualizar</button>
+    </form>    
+</div>
+
+{% endblock %}

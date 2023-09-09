@@ -1,0 +1,76 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'editado_sucesso' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Produto</label>
+            <input class="form-control" type="text" id="formFile" name="produto" required value="{{produto.produto}}">
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Valor</label>
+            <input class="form-control" type="text" id="formFile" name="valor" required value="{{produto.valor}}">
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Quantidades</label>
+            <input class="form-control" type="text" id="formFile" name="quantidade" required value="{{produto.quantidades}}">
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Desceiçao</label>
+            <input class="form-control" type="text" id="formFile" name="descricao" required value="{{produto.descricao}}">
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Classe do Produto</label>
+            <select class="form-control" name="classe">
+                <option value="vazio">Selecione uma classe</option>
+                <option value="adaptador-wifi">Adaptador Wi-fi</option>
+                <option value="adaptador">Adaptador</option>
+                <option value="bonecos">Bonecos</option>
+                <option value="caixa-de-som">Caixa de som</option>
+                <option value="cadeira">Cadeira</option>
+                <option value="caixa-de-som-bluetooth">Caixa de som Bluetooth</option>
+                <option value="caixa-de-som-portatil">Caixa de som portátil</option>
+                <option value="cabo-de-rede">Cabo de rede</option>
+                <option value="cabo-hdmi">Cabo HDMI</option>
+                <option value="base-para-notebook">Base para notebook</option>
+                <option value="cartao-de-memoria">Cartão de memória</option>
+                <option value="cooler">Cooler</option>
+                <option value="desktop">Desktop</option>
+                <option value="estabilizador">Estabilizador</option>
+                <option value="fonte-de-alimentacao">Fonte de alimentação</option>
+                <option value="gabinete">Gabinete</option>
+                <option value="hd-externo">HD externo</option>
+                <option value="hd-interno">HD interno</option>
+                <option value="headset">Headset</option>
+                <option value="hub-usb">Hub USB</option>
+                <option value="impressora">Impressoras</option>
+                <option value="monitor">Monitor</option>
+                <option value="memoria-ram">Memória RAM</option>
+                <option value="microfone">Microfone</option>
+                <option value="mouse">Mouse</option>
+                <option value="mousepad">Mousepad</option>
+                <option value="no-break">No-Break</option>
+                <option value="notebook">Notebook</option>
+                <option value="pen-drive">Pen drive</option>
+                <option value="placa-de-video">Placa de vídeo</option>
+                <option value="placa-mae">Placa-mãe</option>
+                <option value="pc-completo">PC completo</option>
+                <option value="processador">Processador</option>
+                <option value="projetor">Projetor</option>
+                <option value="roteador">Roteador</option>
+                <option value="rede">Rede</option>
+                <option value="ssd">SSD</option>
+                <option value="switch">Switch</option>
+                <option value="tablet">Tablet</option>
+                <option value="teclado">Teclado</option>
+                <option value="teclado-sem-fio">Teclado sem fio</option>
+                <option value="webcam">Webcam</option>
+              </select>
+        </div>
+        <input type="text" value="{{produto.id}}" hidden name="id">
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>    
+</div>
+
+{% endblock %}

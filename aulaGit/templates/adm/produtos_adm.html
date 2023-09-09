@@ -1,0 +1,26 @@
+{% extends 'adm/adm.html' %}
+
+{% block content %}
+
+<div class="container card-produto">
+    {% for produto in produto %}
+    {% if pdt == produto.classe and produto.quantidades > 0 %}
+    <div id="produto" class="card " style="width: 18rem; ">
+        <img class="card-img-top w-100" src="{{produto.link_img}}" alt="{{produto.link_img}}">
+        <div class="card-body">
+          <h5 class="card-title">{{produto.produto}}</h5>
+          <p class="card-text">{{produto.descricao}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li id="produto-floot" class="list-group-item v_produto">R$ {{produto.valor}}</li>
+          <li id="produto-floot" class="list-group-item">Quantidade {{produto.quantidades}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="/editar_produto/{{produto.id}}" class="btn btn-success">Editar</a>      
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %} 
+
+</div>
+{% endblock %}

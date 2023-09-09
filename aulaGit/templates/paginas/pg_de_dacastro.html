@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'cadastro_sucesso' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Nome</label>
+            <input class="form-control" type="text" id="formFile" name="nome" required placeholder="Digite seu Nome">
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Email</label>
+            <input class="form-control" type="text" id="formFile" name="email" required placeholder="Digite seu Email">
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Senha</label>
+            <input class="form-control" type="password" id="formFile" name="senha" required placeholder="Digite sua Senha">
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Telefone</label>
+            <input class="form-control" type="text" id="formFile" name="telefone" required placeholder="Digite seu Telefone">
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>    
+</div>
+{% endblock %} 
