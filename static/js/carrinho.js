@@ -15,12 +15,15 @@ var pg = [...document.getElementsByClassName('form-check-input')]
 
 close.addEventListener('click',(e)=>{
   popup.setAttribute('class','container-fluid ocultar')
+  carro.setAttribute('class','container')
+
 })
 
 gravar.addEventListener('click',(e)=>{
   let pagamento =  pg.find(e=>e.checked)
   console.log(pagamento.value)
   popup.setAttribute('class','container-fluid ocultar')
+  carro.setAttribute('class','container')
   dadosCliente = {
     'nome':nome.value,
     'cpf':cpf.value,
@@ -43,6 +46,7 @@ gravar.addEventListener('click',(e)=>{
 mostar.addEventListener('click',(e)=>{
   if(localStorage.length > 0){
     popup.setAttribute('class','container-fluid popup')
+    carro.setAttribute('class','container ocultar')
   }else{
     alert("Adicione algum item no carrinho")
   }
