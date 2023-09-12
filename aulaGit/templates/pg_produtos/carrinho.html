@@ -42,7 +42,7 @@
     <div id="popup" class="container-fluid ocultar">
         <p id="close" class="close">X</p>
         <div class="container">
-            <div class="row g-3">
+            <div class="row g-3 ">
                 <div class="col-md-6">
                   <label for="nome" class="form-label">Nome</label>
                   <input type="text" class="form-control" id="nome" required>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="col-12">
                   <div class="form-check">
-                    <input class="form-check-input" value="Dinheiro" type="radio" id="gridCheck" name="pagamento" checked>
+                    <input class="form-check-input" value="Dinheiro" type="radio" id="gridCheck" name="pagamento" che>
                     <label class="form-check-label" for="gridCheck">
                       Dinheiro
                     </label>
@@ -226,12 +226,11 @@
                     </label>
                   </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12 pdb">
                 <button type="submit" id="ocultar" class="btn btn-primary mb-4">Concluir</button>
                 </div>
             </div>
-        </div>
-        
+        </div>   
     </div>
 
     <script src="{% static 'js/carrinho.js' %}"></script>
