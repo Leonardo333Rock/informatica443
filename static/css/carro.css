@@ -12,6 +12,9 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
 }
 
 label{
