@@ -21,9 +21,13 @@
             <input class="form-control" type="text" id="formFile" name="descricao" required value="{{produto.descricao}}">
         </div>
         <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Codigo interno</label>
+            <input class="form-control" type="text" id="formFile" name="codigo_interno" required value="{{produto.codigo_interno}}">
+        </div>
+        <div class="mb-3">
             <label for="formText" class="form-label color-label label_text_imput">Classe do Produto</label>
             <select class="form-control" name="classe">
-                <option value="vazio">Selecione uma classe</option>
+                <option value="{{produto.classe}}" selected>{{produto.classe}}</option>
                 <option value="adaptador-wifi">Adaptador Wi-fi</option>
                 <option value="adaptador">Adaptador</option>
                 <option value="bonecos">Bonecos</option>
@@ -65,7 +69,7 @@
                 <option value="switch">Switch</option>
                 <option value="tablet">Tablet</option>
                 <option value="teclado-gamer">Teclado gamer</option>
-                <option value="teclado-sem-fio">Teclado sem fio</option>
+                <option value="teclado">Teclado</option>
                 <option value="webcam">Webcam</option>
               </select>
         </div>
