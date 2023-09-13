@@ -15,5 +15,6 @@ class Produtos(models.Model):
     descricao = models.TextField(max_length=350)
     link_img = models.TextField(max_length=255)
     quantidades = models.IntegerField()
-    classe =  models.TextField(max_length=255) 
+    classe =  models.TextField(max_length=255)
+    codigo_interno = models.IntegerField()
     
