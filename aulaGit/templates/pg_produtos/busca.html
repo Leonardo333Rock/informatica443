@@ -4,7 +4,7 @@
 
 <div class="container card-produto">
     {% for produto in produto %}
-    {% if busca in produto.produto and produto.quantidades > 0 %}
+    {% if busca in produto.produto and produto.quantidades > 0 or busca in produto.descricao and produto.quantidades > 0%}
     <div id="produto" class="card " style="width: 18rem; ">
         <img class="card-img-top w-100" src="{{produto.link_img}}" alt="{{produto.link_img}}">
         <div class="card-body">
