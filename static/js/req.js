@@ -31,7 +31,7 @@ add2.addEventListener('click',(e)=>{
     let vl_formate = valor.split(' ')[1]
     var msg = 'Produto: '+ produto +"\n Valor: " + vl_formate
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    var numeroTelefone = '5599984146460';
+    var numeroTelefone = '5599991809759';
     var mensagem = msg
     if (isMobile) {
       var url = 'whatsapp://send?phone=' + numeroTelefone + '&text=' + encodeURIComponent(mensagem);
