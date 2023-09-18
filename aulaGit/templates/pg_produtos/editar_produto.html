@@ -14,15 +14,18 @@
         </div>
         <div class="mb-3">
             <label for="formText" class="form-label color-label label_text_imput">Quantidades</label>
-            <input class="form-control" type="text" id="formFile" name="quantidade" required value="{{produto.quantidades}}">
+            <input class="form-control" type="text" id="formFile" name="quantidade" required
+                value="{{produto.quantidades}}">
         </div>
         <div class="mb-3">
             <label for="formText" class="form-label color-label label_text_imput">Desceiçao</label>
-            <input class="form-control" type="text" id="formFile" name="descricao" required value="{{produto.descricao}}">
+            <input class="form-control" type="text" id="formFile" name="descricao" required
+                value="{{produto.descricao}}">
         </div>
         <div class="mb-3">
             <label for="formText" class="form-label color-label label_text_imput">Codigo interno</label>
-            <input class="form-control" type="text" id="formFile" name="codigo_interno" required value="{{produto.codigo_interno}}">
+            <input class="form-control" type="text" id="formFile" name="codigo_interno" required
+                value="{{produto.codigo_interno}}">
         </div>
         <div class="mb-3">
             <label for="formText" class="form-label color-label label_text_imput">Classe do Produto</label>
@@ -55,6 +58,7 @@
                 <option value="microfone">Microfone</option>
                 <option value="mouse">Mouse</option>
                 <option value="mouse-gamer">Mouse gamer</option>
+                <option value="mouse-sem-fio">Mouse sem fio</option>
                 <option value="mousepad">Mousepad</option>
                 <option value="no-break">No-Break</option>
                 <option value="notebook">Notebook</option>
@@ -72,11 +76,11 @@
                 <option value="teclado-gamer">Teclado gamer</option>
                 <option value="teclado">Teclado</option>
                 <option value="webcam">Webcam</option>
-              </select>
+            </select>
         </div>
         <input type="text" value="{{produto.id}}" hidden name="id">
         <button type="submit" class="btn btn-success">Cadastrar</button>
-    </form>    
+    </form>
 </div>
 
 {% endblock %}
