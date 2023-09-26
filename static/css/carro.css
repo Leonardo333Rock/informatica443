@@ -41,3 +41,12 @@ label{
     font-weight: bold;
     cursor: pointer;
 }
+
+.img_del{
+    cursor: pointer;
+    position: relative;
+    right: 0px;
+    top: 0px;
+    height: auto;
+    width: 35px;
+}
