@@ -21,6 +21,10 @@ urlpatterns = [
     path('pdt_faltando',views.pdt_faltando,name='pdt_faltando'),
     path('produto_adm/<str>',views.produto_adm,name='produto_adm'),
     path('busca_adm',views.busca_adm,name="busca_adm"),
+    path('busca_cdi',views.busca_cdi,name="busca_cdi"),
+    path('produtos_cdi',views.produtos_cdi,name='produtos_cdi'),
+
+
 
 
 ]

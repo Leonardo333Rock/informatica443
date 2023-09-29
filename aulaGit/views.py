@@ -131,4 +131,17 @@ def busca_adm(request):
     return render(request,'adm/busca_adm.html',{'produto':produto, 'busca': busca})
 
 
+def busca_cdi(request):
+    return render(request,'adm/busca_cdi.html')
+
+
+def produtos_cdi(request):
+    try:
+        produto = Produtos.objects.all()
+        busca = int(request.POST.get('busca'))
+        print(busca)
+        return render(request,'adm/produtos_cdi.html',{'produto':produto, 'busca': busca})
+    except:
+        return render(request,'adm/busca_cdi.html')
+
 
