@@ -3,7 +3,8 @@ from . models import Cliente, Produtos
 from static.modulos import formato as f
 
 def Home(request):
-    return render(request,'home.html')
+    produto = Produtos.objects.all()
+    return render(request,'home.html',{'produto':produto})
 
 def Pagina_de_cadastro(request):
     return render(request,'paginas/pg_de_dacastro.html')

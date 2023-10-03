@@ -127,56 +127,28 @@
 
 
   {% block content %}
-  <div class="container border border-dark mb-4 sli">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active w-100">
-          <img class="ml-5 d-inline w-50 p-2 img-promo" src="../static/img/cadeira/cadeira193.jpg" alt="First slide">
-          <div class="m-5 d-inline-block promo">
-            <h1 class="h3">PROMOÇÃO</h1>
-            <p class="h6">CADEIRA GAMER THUNDERX3 BC3 VM</p>
-            <p class="">Valor: <span class="valor">1.980,00</span></p>
-          </div>
-        </div>
-        <div class="carousel-item w-100">
-          <img class="ml-5 d-inline w-50 p-2 img-promo" src="../../static/img/mouse-gamer/mouse-gamer21.jpg"
-            alt="Second slide">
-          <div class="m-5 d-inline-block promo">
-            <h1 class="h3">PROMOÇÃO</h1>
-            <p class="h6">MOUSE GAMER REDRAGON COBRA</p>
-            <p class="h6">RGB 7 BOTÕES 10000DPI LUNAR WHITE</p>
-            <p>Valor: <span class="valor">190,00</span></p>
-          </div>
-        </div>
-        <div class="carousel-item w-100">
-          <img class="ml-5 d-inline w-50 p-2 img-promo" src="../../static/img/headset/headset47.jpg" alt="Third slide">
-          <div class="m-5 d-inline-block promo">
-            <h1 class="h3">PROMOÇÃO</h1>
-            <p class="h6">HEADSET FORTREK PRO H1+7.1 RGB</p>
-            <p>Valor: <span class="valor">280,00</span></p>
-          </div>
-        </div>
-        <div class="carousel-item w-100">
-          <img class="ml-5 d-inline w-50 p-2 img-promo" src="../../static/img/bonecos/bonecos137.jpg" alt="Third slide">
-          <div class="m-5 d-inline-block promo">
-            <h1 class="h3">PROMOÇÃO</h1>
-            <p class="h6">BONECO ANIMES DRAGON BALL REI COLD</p>
-            <p class="h6">FIGURA REI COLD ESTATUETA 26C</p>
-            <p>Valor: <span class="valor">340,00</span></p>
-          </div>
-        </div>
+  <div class="container card-produto">
+    {% for produto in produto %}
+    {% if 'mouse' == produto.classe and produto.quantidades > 0 %}
+    <div id="produto" class="card " style="width: 18rem; ">
+      <img class="card-img-top w-100" src="{{produto.link_img}}" alt="{{produto.link_img}}">
+      <div class="card-body">
+        <h5 class="card-title">{{produto.produto}}</h5>
+        <p class="card-text">{{produto.descricao}}</p>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <ul class="list-group list-group-flush">
+        <li id="produto-floot" class="list-group-item v_produto">R$ {{produto.valor}}</li>
+      </ul>
+      <div class="card-body">
+        <a href="/ver_mais/{{produto.id}}" class="card-link">Ver mais</a>
+        <button id="adicionar1" class="btn btn-success">Adicionar</button>
+      </div>
+      <p hidden>{{ produto.codigo_interno }}</p>
     </div>
+    {% endif %}
+    {% endfor %}
+  
   </div>
-
   {% endblock %}
   <footer class="text-center text-lg-start bg-dark text-light" style="margin-top: 25px;">
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
