@@ -25,6 +25,14 @@
             <input class="form-control" type="text" id="formFile" name="codigo_interno">
         </div>
         <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Promoção</label>
+            <select class="form-control" id="formFile" name="promocao" required>
+                <option selected value="{{produto.promocao}}">{{produto.promocao}}</option>
+                <option value="SIM">SIM</option>
+                <option value="NAO">NAO</option>
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="formText" class="form-label color-label label_text_imput">Classe do Produto</label>
             <select class="form-control" name="classe">
                 <option value="vazio">Selecione uma classe</option>

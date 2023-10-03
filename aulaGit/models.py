@@ -17,4 +17,6 @@ class Produtos(models.Model):
     quantidades = models.IntegerField()
     classe =  models.TextField(max_length=255)
     codigo_interno = models.IntegerField()
+    promocao = models.TextField(max_length=3)
+
     

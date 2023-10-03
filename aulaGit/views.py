@@ -41,12 +41,13 @@ def pg_de_login(request):
     return render(request,'paginas/pagina_de_login.html')
 
 def logar(request):
+    produto = Produtos.objects.all()
     r_email = request.POST.get('email')
     r_senha = request.POST.get('senha')
     cliente = Cliente.objects.get(email=r_email)
     if r_senha == cliente.senha:
         print(r_email,r_senha)
-        return render(request,'adm/adm.html')
+        return render(request,'adm/adm.html',{'produto':produto})
     else:
         print(r_email,r_senha)
         return render(request,'paginas/pagina_de_login.html')
@@ -61,6 +62,7 @@ def produto_cadastrado(request):
         produto.valor = request.POST.get("valor")
         produto.quantidades = request.POST.get('quantidade')
         produto.codigo_interno = request.POST.get('codigo_interno')
+        produto.promocao = request.POST.get('promocao')
         produto.descricao = request.POST.get("descricao").upper()
         classe = request.POST.get('classe')
         classe_reple = classe.replace(" ","_")
@@ -90,6 +92,7 @@ def editado_sucesso(request):
     produto.valor = request.POST.get('valor')
     produto.quantidades = request.POST.get('quantidade')
     produto.codigo_interno = request.POST.get('codigo_interno')
+    produto.promocao = request.POST.get('promocao')
     produto.descricao = request.POST.get("descricao").upper()
     classe = request.POST.get('classe')
     classe_reple = classe.replace(" ","_")
