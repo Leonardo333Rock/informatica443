@@ -130,11 +130,12 @@
   <div class="container promocao">
     <h2>PROMOÇÕES DA SEMANA</h2>
   </div>
+  
   <div class="container card-produto">
     {% for produto in produto %}
     {% if 'SIM' == produto.promocao and produto.quantidades > 0 %}
     <div id="produto" class="card " style="width: 18rem; ">
-      <img class="card-img-top w-100" src="{{produto.link_img}}" alt="{{produto.link_img}}">
+      <a href="/ver_mais/{{produto.id}}"><img class="card-img-top w-100" src="{{produto.link_img}}" alt="{{produto.link_img}}"></a>
       <div class="card-body">
         <h5 class="card-title">{{produto.produto}}</h5>
         <p class="card-text">{{produto.descricao}}</p>
@@ -143,7 +144,7 @@
         <li id="produto-floot" class="list-group-item v_produto" style="color: orangered;">R$ {{produto.valor}}</li>
       </ul>
       <div class="card-body">
-        <a href="/ver_mais/{{produto.id}}" class="card-link btn btn-success ">Comprar</a>
+        <a href="/ver_mais/{{produto.id}}" class="card-link btn btn-success">Comprar</a>
         <button id="adicionar1" class="btn btn-primary">Adicionar</button>
       </div>
       <p hidden>{{ produto.codigo_interno }}</p>

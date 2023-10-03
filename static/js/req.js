@@ -12,7 +12,7 @@ req = adicionar1.map((e,i)=>{
     e.parentNode.parentNode.children[3].children[1].addEventListener('click',(e)=>{
         produto = e.target.parentNode.parentNode.children[1].children[0].innerHTML
         let valor = e.target.parentNode.parentNode.children[2].children[0].innerHTML
-        let image = e.target.parentNode.parentNode.children[0].alt
+        let image = e.target.parentNode.parentNode.children[0].children[0].alt
         let codigo_interno = e.target.parentNode.parentNode.children[4].innerHTML
         let val_formate = valor.split(';')[1]
         pdt.push({'produto':produto,'valor':val_formate,'img':image, 'codigo_interno': codigo_interno})
@@ -20,7 +20,7 @@ req = adicionar1.map((e,i)=>{
         localStorage.setItem('produto',pdt1)
         const arr = JSON.parse(localStorage.getItem('produto'))
         carro.innerHTML = arr.length
-        console.log(e.target.parentNode.parentNode.children[4].innerHTML)
+        console.log(e.target.parentNode.parentNode.children[0].children[0].alt)
     })     
 })
 
