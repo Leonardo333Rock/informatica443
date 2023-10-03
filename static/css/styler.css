@@ -124,6 +124,47 @@ header{
     font-size: 18px;
 }
 
-.color-label{
+/* .color-label{
     color: aliceblue;
+} */
+
+
+.promocao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: #fff;
+    text-shadow: red 3px 0px 2px;
+    animation: promo ;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease;
+}
+
+.promocao h2{
+    padding: 15px;
+    background-color: orangered;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@keyframes promo{
+    0%{
+        text-shadow: red 3px 0px 2px;
+
+    }
+    50%{
+        text-shadow: blue 3px 0px 2px;
+
+    }
+    75%{
+        text-shadow: green 3px 0px 2px;
+
+    }
+    100%{
+        text-shadow: red 3px 0px 2px;
+
+    }
 }
