@@ -135,11 +135,7 @@ header{
     align-items: center;
     padding: 15px;
     color: #fff;
-    text-shadow: red 3px 0px 2px;
-    animation: promo ;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function:ease;
+
 }
 
 .promocao h2{
@@ -148,23 +144,34 @@ header{
     border-radius: 8px;
     font-size: 1.5rem;
     font-weight: bold;
+    text-shadow: red 3px 0px 2px;
+    animation: promo ;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease;
 }
 
 @keyframes promo{
     0%{
         text-shadow: red 3px 0px 2px;
+        transform: scale(1);
 
     }
     50%{
         text-shadow: blue 3px 0px 2px;
+        transform: scale(1.1);
+
 
     }
     75%{
         text-shadow: green 3px 0px 2px;
+        transform: scale(1.1);
+
 
     }
     100%{
         text-shadow: red 3px 0px 2px;
+        transform: scale(1);
 
     }
 }
