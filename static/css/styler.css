@@ -15,6 +15,26 @@ header{
     justify-content: center;
 }
 
+.menu_img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img_menu{
+    background: #ddd;
+    height: 48px;
+    width: auto;
+    padding: 8px;
+    border-radius: 8px;
+
+}
+
+.dropdown-item{
+   text-transform: uppercase;
+}
+
+
 .form-label{
     font-weight: bold;
 }

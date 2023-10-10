@@ -62,9 +62,6 @@
               <a class="dropdown-item" href="/produto/bonecos">Bonecos</a>
               <a class="dropdown-item" href="/produto/cabo-hdmi">Cabo HDMI</a>
               <a class="dropdown-item" href="/produto/cabo-de-rede">Cabo de rede</a>
-              <a class="dropdown-item" href="/produto/cadeira">Cadeira</a>
-              <a class="dropdown-item" href="/produto/caixa-de-som">Caixa de som</a>
-              <a class="dropdown-item" href="/produto/caixa-de-som-bluetooth">Caixa de som Bluetooth</a>
               <a class="dropdown-item" href="/produto/estabilizador">Estabilizador</a>
               <a class="dropdown-item" href="/produto/fone-sem-fio">Fone sem fio</a>
               <a class="dropdown-item" href="/produto/fonte-de-alimentacao">Fonte de alimentação</a>
@@ -73,15 +70,9 @@
               <a class="dropdown-item" href="/produto/hub-usb">Hub USB</a>
               <a class="dropdown-item" href="/produto/impressora">Impressora</a>
               <a class="dropdown-item" href="/produto/memoria-ram">Memória RAM</a>
-              <a class="dropdown-item" href="/produto/mouse">Mouse</a>
-              <a class="dropdown-item" href="/produto/mouse-gamer">Mouse gamer</a>
-              <a class="dropdown-item" href="/produto/mouse-sem-fio">Mouse sem fio</a>
               <a class="dropdown-item" href="/produto/monitor">Monitor</a>
               <a class="dropdown-item" href="/produto/no-break">No-Break</a>
               <a class="dropdown-item" href="/produto/notebook">Notebook</a>
-              <a class="dropdown-item" href="/produto/teclado">Teclado</a>
-              <a class="dropdown-item" href="/produto/teclado-gamer">Teclado gamer</a>
-              <a class="dropdown-item" href="/produto/kit-teclado-e-mouse">kit teclado e mouse</a>
               <a class="dropdown-item" href="/produto/roteador">Roteador</a>
               <a class="dropdown-item" href="/produto/pen-drive">Pen drive</a>
               <a class="dropdown-item" href="/produto/pc-completo">PC completo</a>
@@ -102,7 +93,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" hidden href="#">Cadastro</a>
+            <a class="nav-link " hidden href="#"></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'busca' %}">
@@ -112,6 +103,68 @@
         </form>
       </div>
     </nav>
+  </div>
+  <div class="container-fluid menu_img">
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <img class="img_menu" src="../static/img/menu/mouses.png" alt="">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/produto/mouse">Mouse</a>
+        <a class="dropdown-item" href="/produto/mouse-gamer">Mouse gamer</a>
+        <a class="dropdown-item" href="/produto/mouse-sem-fio">Mouse sem fio</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <img class="img_menu" src="../static/img/menu/teclado-e-mouse.png" alt="">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/produto/kit-teclado-e-mouse">kit teclado e mouse</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <img class="img_menu" src="../static/img/menu/teclado.png" alt="">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/produto/teclado">Teclado</a>
+        <a class="dropdown-item" href="/produto/teclado-gamer">Teclado gamer</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <img class="img_menu" src="../static/img/menu/caixas-de-som.png" alt="">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/produto/caixa-de-som">Caixa de som</a>
+        <a class="dropdown-item" href="/produto/caixa-de-som-bluetooth">Caixa de som Bluetooth</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <img class="img_menu" src="../static/img/menu/headset.png" alt="">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/produto/headset">Headset</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <img class="img_menu" src="../static/img/menu/cadeira.png" alt="">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/produto/cadeira">Cadeira</a>
+
+      </div>
+    </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -132,12 +185,13 @@
   <div class="container-fluid promocao">
     <h2>PROMOÇÕES DA SEMANA</h2>
   </div>
-  
+
   <div class="container card-produto">
     {% for produto in produto %}
     {% if 'SIM' == produto.promocao and produto.quantidades > 0 %}
     <div id="produto" class="card " style="width: 18rem; ">
-      <a href="/ver_mais/{{produto.id}}"><img class="card-img-top w-100" src="{{produto.link_img}}" alt="{{produto.link_img}}"></a>
+      <a href="/ver_mais/{{produto.id}}"><img class="card-img-top w-100" src="{{produto.link_img}}"
+          alt="{{produto.link_img}}"></a>
       <div class="card-body">
         <h5 class="card-title">{{produto.produto}}</h5>
         <p class="card-text">{{produto.descricao}}</p>
