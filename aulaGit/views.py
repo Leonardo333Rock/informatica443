@@ -73,12 +73,15 @@ def produto_cadastrado(request):
 
 def ver_mais(request,id):
     produto = Produtos.objects.get(id=id)
+    print(produto.link_img)
+    link_ft = produto.link_img.split('../..')[1]
+    print(link_ft)
     valor_formatato = f.formatar_valor_br(produto.valor)
     valor = valor_formatato.split(',')
     valor[1] = valor[1] if valor[1] != '0' else ",00"
     valor2 = valor[0]+valor[1]
 
-    return render(request,'pg_produtos/ver_mais.html',{'produto':produto,'valor':valor2})
+    return render(request,'pg_produtos/ver_mais.html',{'produto':produto,'valor':valor2,'link_ft':link_ft})
 
 
 def editar_produto(request,id):

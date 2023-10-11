@@ -29,8 +29,10 @@ add2.addEventListener('click',(e)=>{
     produto = e.target.parentNode.parentNode.children[0].innerHTML
     let valor = e.target.parentNode.parentNode.children[1].children[0].children[0].innerHTML
     let image = e.target.parentNode.parentNode.parentNode.children[0].alt
+    let codigo_interno = e.target.parentNode.children[1].innerHTML
+
     let vl_formate = valor.split(' ')[1]
-    var msg = 'Produto: '+ produto +"\n Valor: " + vl_formate
+    var msg = 'Produto: '+ produto +"\n Valor: " + vl_formate + '\n\n' + `Codigo interno: *${codigo_interno}*`
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     var numeroTelefone = '5599991809759';
     var mensagem = msg
