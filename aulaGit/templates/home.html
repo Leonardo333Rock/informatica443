@@ -4,13 +4,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta property="og:image" content="{% block meta_description %}https://informatica433.pythonanywhere.com/static/img/logo-03.png{% endblock %}">
+  {% block meta_description %}
+  <meta property="og:image" content="https://informatica433.pythonanywhere.com/static/img/logo-03.png">
   <meta property="og:title" content="Informatica">
   <meta property="og:description" content="Inicio">
   <meta property="og:url" content="informatica.com">
   <meta property="og:type" content="website">
   <meta property="og:image:height" content="300">
   <meta property="og:image:width" content="400">
+  {% endblock %}
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../static/img/logo-03.png" type="image/x-png">
