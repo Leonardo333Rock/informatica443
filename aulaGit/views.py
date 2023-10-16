@@ -6,17 +6,18 @@ def Home(request):
     produto = Produtos.objects.all()
     return render(request,'home.html',{'produto':produto})
 
-def Pagina_de_cadastro(request):
-    return render(request,'paginas/pg_de_dacastro.html')
+def pagina_de_cadastro(request):
+    if request.method == "GET":
+        return render(request,'paginas/pg_de_dacastro.html')
+    else: 
+        cliente = Cliente()
+        cliente.nome = request.POST.get('nome')
+        cliente.email = request.POST.get('email')
+        cliente.senha = request.POST.get('senha')
+        cliente.telefone = request.POST.get('telefone')
+        cliente.save()
+        return render(request,'paginas/pg_de_dacastro.html')
 
-def cadastro_sucesso(request):
-    cliente = Cliente()
-    cliente.nome = request.POST.get('nome')
-    cliente.email = request.POST.get('email')
-    cliente.senha = request.POST.get('senha')
-    cliente.telefone = request.POST.get('telefone')
-    cliente.save()
-    return render(request,'paginas/pg_de_dacastro.html')
 
 def editar_cadastro(request,id):
     cliente = Cliente.objects.get(id=id)
@@ -53,9 +54,9 @@ def logar(request):
         return render(request,'paginas/pagina_de_login.html')
     
 def cadastrar_produto(request):
-    return render(request,'pg_produtos/cadastro_de_produtos.html')
-
-def produto_cadastrado(request):
+    if request.method == 'GET':
+        return render(request,'pg_produtos/cadastro_de_produtos.html')
+    else:
         id = Produtos.objects.all()
         produto = Produtos()
         produto.produto = request.POST.get("produto").upper()
@@ -70,6 +71,7 @@ def produto_cadastrado(request):
         produto.link_img = f"../../static/img/{classe_reple}/{classe_reple}{len(id)+1}.jpg"
         produto.save()
         return redirect('cadastro_de_produtos')
+
 
 def ver_mais(request,id):
     produto = Produtos.objects.get(id=id)

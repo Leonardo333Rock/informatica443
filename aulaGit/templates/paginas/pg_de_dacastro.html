@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <form action="{% url 'cadastro_sucesso' %}" method="POST">
+    <form action="{% url 'pagina_de_cadastro' %}" method="POST">
         {% csrf_token %}
         <div class="mb-3">
             <label for="formText" class="form-label color-label label_text_imput">Nome</label>
