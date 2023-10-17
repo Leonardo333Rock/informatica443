@@ -35,8 +35,12 @@ gravar.addEventListener('click', (e) => {
     'pg': pagamento.value
   }
 
-  localStorage.setItem('dadosCliente', JSON.stringify(dadosCliente))
-  console.log(dadosCliente)
+  if(dadosCliente['nome'] != '' && dadosCliente['cpf'] != '' && dadosCliente['rua'] != '' && dadosCliente['numero'] != ''){
+    localStorage.setItem('dadosCliente', JSON.stringify(dadosCliente))
+  }else{
+    alert('Preencha todos os campos')
+  }
+
 
 
 
