@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . models import Cliente, Produtos
 from static.modulos import formato as f
+from django.contrib.auth.models import User
 
 def Home(request):
     produto = Produtos.objects.all()
@@ -10,12 +11,11 @@ def pagina_de_cadastro(request):
     if request.method == "GET":
         return render(request,'paginas/pg_de_dacastro.html')
     else: 
-        cliente = Cliente()
-        cliente.nome = request.POST.get('nome')
-        cliente.email = request.POST.get('email')
-        cliente.senha = request.POST.get('senha')
-        cliente.telefone = request.POST.get('telefone')
-        cliente.save()
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+        user = User.objects.create_user(username=nome,email=email,password=senha)
+        user.save()
         return render(request,'paginas/pg_de_dacastro.html')
 
 
