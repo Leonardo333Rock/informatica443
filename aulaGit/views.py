@@ -2,15 +2,21 @@ from django.shortcuts import render, redirect
 from . models import Cliente, Produtos
 from static.modulos import formato as f
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 def Home(request):
     produto = Produtos.objects.all()
+    # if request.user.is_authenticated:
+    #     return render(request,'adm/adm.html',{'produto':produto})
+    # else:
     return render(request,'home.html',{'produto':produto})
+
 
 def pagina_de_cadastro(request):
     if request.method == "GET":
         return render(request,'paginas/pg_de_dacastro.html')
-    else: 
+    else:
         nome = request.POST.get('nome')
         email = request.POST.get('email')
         senha = request.POST.get('senha')
@@ -39,20 +45,20 @@ def produto(request,str):
     return render(request,'paginas/produtos.html',{'pdt':pdt,'produto':produto})
 
 def pg_de_login(request):
-    return render(request,'paginas/pagina_de_login.html')
-
-def logar(request):
     produto = Produtos.objects.all()
-    r_email = request.POST.get('email')
-    r_senha = request.POST.get('senha')
-    cliente = Cliente.objects.get(email=r_email)
-    if r_senha == cliente.senha:
-        print(r_email,r_senha)
+    if request.method == "GET":
+        return render(request,'paginas/pagina_de_login.html')
+    username =  request.POST.get('username')
+    senha =  request.POST.get('senha')
+    user = authenticate(username=username, password=senha)
+
+    if user:
+        login(request, user)
         return render(request,'adm/adm.html',{'produto':produto})
     else:
-        print(r_email,r_senha)
         return render(request,'paginas/pagina_de_login.html')
-    
+     
+@login_required(login_url='pagina_de_login')    
 def cadastrar_produto(request):
     if request.method == 'GET':
         return render(request,'pg_produtos/cadastro_de_produtos.html')
@@ -85,7 +91,7 @@ def ver_mais(request,id):
 
     return render(request,'pg_produtos/ver_mais.html',{'produto':produto,'valor':valor2,'link_ft':link_ft})
 
-
+@login_required(login_url='pagina_de_login')
 def editar_produto(request,id):
     produto = Produtos.objects.get(id=id)
     return render(request,'pg_produtos/editar_produto.html',{"produto":produto,"id":id})
@@ -123,34 +129,32 @@ def busca(request):
     return render(request,'pg_produtos/busca.html',{'produto':produto, 'busca': busca})
 
 
+@login_required(login_url='pagina_de_login')
 def pdt_faltando(request):
     produto = Produtos.objects.all()
     return render(request,'adm/pdt_faltando.html',{'produto':produto})
 
-
+@login_required(login_url='pagina_de_login')
 def produto_adm(request,str):
     pdt = str
     produto = Produtos.objects.all()
     return render(request,'adm/produtos_adm.html',{'pdt':pdt,'produto':produto})
 
+@login_required(login_url='pagina_de_login')
 def busca_adm(request):
     produto = Produtos.objects.all()
     busca = request.POST.get('busca').upper()
     print(busca)
     return render(request,'adm/busca_adm.html',{'produto':produto, 'busca': busca})
 
-
+@login_required(login_url='pagina_de_login')
 def busca_cdi(request):
-    return render(request,'adm/busca_cdi.html')
-
-
-def produtos_cdi(request):
-    try:
-        produto = Produtos.objects.all()
-        busca = int(request.POST.get('busca'))
-        print(busca)
-        return render(request,'adm/produtos_cdi.html',{'produto':produto, 'busca': busca})
-    except:
+    if request.method == "GET":
         return render(request,'adm/busca_cdi.html')
-
-
+    elif request.method == "POST":
+        try:
+            produto = Produtos.objects.all()
+            busca = int(request.POST.get('busca'))
+            return render(request,'adm/produtos_cdi.html',{'produto':produto, 'busca': busca})
+        except:
+            return render(request,'adm/busca_cdi.html')

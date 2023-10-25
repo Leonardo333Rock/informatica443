@@ -7,7 +7,6 @@ urlpatterns = [
     path('editar_cadastro/<int:id>',views.editar_cadastro,name="editar_cadastro"),
     path('editado_sucesso',views.editado_sucesso,name="editado_sucesso"),
     path('pagina_de_login',views.pg_de_login,name="pagina_de_login"),
-    path('logar',views.logar,name='logar'),
     path('produto/<str>',views.produto,name='produto'),
     path('cadastro_de_produtos',views.cadastrar_produto,name="cadastro_de_produtos"),
     path('ver_mais/<int:id>',views.ver_mais,name='ver_mais'),
@@ -20,9 +19,5 @@ urlpatterns = [
     path('produto_adm/<str>',views.produto_adm,name='produto_adm'),
     path('busca_adm',views.busca_adm,name="busca_adm"),
     path('busca_cdi',views.busca_cdi,name="busca_cdi"),
-    path('produtos_cdi',views.produtos_cdi,name='produtos_cdi'),
-
-
-
 
 ]
