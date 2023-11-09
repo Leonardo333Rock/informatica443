@@ -19,4 +19,7 @@ class Produtos(models.Model):
     codigo_interno = models.IntegerField()
     promocao = models.TextField(max_length=3)
 
+
+class Pedido(models.Model):
+    id = models.AutoField(primary_key=True)
     

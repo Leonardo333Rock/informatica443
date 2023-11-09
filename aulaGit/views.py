@@ -1,17 +1,27 @@
 from django.shortcuts import render, redirect
-from . models import Cliente, Produtos
+import requests
+from . models import Cliente, Produtos, Pedido
 from static.modulos import formato as f
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 def Home(request):
     produto = Produtos.objects.all()
-    # if request.user.is_authenticated:
-    #     return render(request,'adm/adm.html',{'produto':produto})
-    # else:
-    return render(request,'home.html',{'produto':produto})
-
+    pedido = Pedido()
+    cookie = request.COOKIES.get('numero_do_pedido')
+    if not cookie:
+        pedido.save()
+        numero_do_pedido = len(Pedido.objects.all())
+        print(numero_do_pedido)
+        response = render(request,'home.html',{'produto':produto})
+        response.set_cookie('numero_do_pedido',numero_do_pedido)
+        return response
+    else:
+        print(cookie)
+        return render(request,'home.html',{'produto':produto})
+        
 
 def pagina_de_cadastro(request):
     if request.method == "GET":

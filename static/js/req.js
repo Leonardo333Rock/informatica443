@@ -15,12 +15,11 @@ req = adicionar1.map((e, i) => {
         let image = e.target.parentNode.parentNode.children[0].children[0].alt
         let codigo_interno = e.target.parentNode.parentNode.children[4].innerHTML
         let val_formate = valor.split(';')[1]
-        pdt.push({ 'produto': produto, 'valor': val_formate, 'img': image, 'codigo_interno': codigo_interno })
+        pdt.push({'produto': produto, 'valor': val_formate, 'img': image, 'codigo_interno': codigo_interno })
         let pdt1 = JSON.stringify(pdt)
         localStorage.setItem('produto', pdt1)
         const arr = JSON.parse(localStorage.getItem('produto'))
         carro.innerHTML = arr.length
-        console.log(e.target.parentNode.parentNode.children[0].children[0].alt)
     })
 })
 
