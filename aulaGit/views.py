@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-import requests
 from . models import Cliente, Produtos, Pedido
 from static.modulos import formato as f
 from django.contrib.auth.models import User
