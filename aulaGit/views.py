@@ -119,7 +119,7 @@ def editado_sucesso(request):
     produto.classe = classe_reple
     produto.link_img = f"../../static/img/{classe_reple}/{classe_reple}{id}.jpg"
     produto.save()
-    return render(request,'pg_produtos/editar_produto.html')
+    return redirect('busca_cdi')
 
 
 def servicos(request):
