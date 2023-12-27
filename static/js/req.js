@@ -40,7 +40,7 @@ add2.addEventListener('click', (e) => {
     popup.classList.remove('ocultar')
     popup.setAttribute('class', 'container-fluid popup')
 
-    produto = e.target.parentNode.parentNode.children[0].innerHTML
+    produto = e.target.parentNode.children[0].children[1].innerHTML
     let valor = e.target.parentNode.parentNode.children[1].children[0].children[0].innerHTML
     let image = e.target.parentNode.parentNode.parentNode.children[0].alt
     let codigo_interno = e.target.parentNode.children[1].innerHTML
