@@ -22,9 +22,9 @@ close.addEventListener('click', (e) => {
 
 
 gravar.addEventListener('click', (e) => {
-  let cookies = document.cookie.split(';')
-  let cookie = cookies.filter(e=>e == e.match(/ numero_do_pedido=(\d+)/ig))
-  let co = cookie[0].split('=')[1]
+  // let cookies = document.cookie.split(';')
+  // let cookie = cookies.filter(e=>e == e.match(/ numero_do_pedido=(\d+)/ig))
+  // let co = cookie[0].split('=')[1]
   let pagamento = pg.find(e => e.checked)
   console.log(pagamento.value)
   popup.setAttribute('class', 'container-fluid ocultar')
@@ -38,7 +38,7 @@ gravar.addEventListener('click', (e) => {
     'bairro': bairro.value,
     'numero': numero.value,
     'pg': pagamento.value,
-    'pedido' : co
+    // 'pedido' : co
   }
 
   if(dadosCliente['nome'] != '' && dadosCliente['cpf'] != '' && dadosCliente['rua'] != '' && dadosCliente['numero'] != ''){
