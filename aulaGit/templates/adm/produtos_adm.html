@@ -4,7 +4,7 @@
 
 <div class="container card-produto">
     {% for produto in produto %}
-    {% if pdt == produto.classe and produto.quantidades > 0 %}
+    {% if pdt == produto.classe %}
     <div id="produto" class="card " style="width: 18rem; ">
         <img class="card-img-top w-100" src="{{produto.link_img}}" alt="{{produto.link_img}}">
         <div class="card-body">
