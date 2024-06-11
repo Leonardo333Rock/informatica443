@@ -1,7 +1,7 @@
 .bg-body{
-    /* background-image: linear-gradient(to bottom right,rgb(191, 190, 189), rgb(252, 249, 249)) ; */
-    background-image: url('../img/bg/bg.jpg') ;
-
+    background-image: linear-gradient(to bottom right,rgb(189, 189, 191), rgb(252, 249, 249)) ; 
+    /* background-image: url('../img/bg/bg.jpg') ; */
+    /* background-color: red; */
 
 }
 

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   {% block meta_description %}
   <meta property="og:image" content="https://informatica433.pythonanywhere.com/static/img/logo-03.png">
-  <meta property="og:title" content="Informatica">
+  <meta property="og:title" content="AL Informatica">
   <meta property="og:description" content="Inicio">
   <meta property="og:url" content="informatica.com">
   <meta property="og:type" content="website">
@@ -23,12 +23,13 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/styler.css' %}">
   <link rel="stylesheet" href="{% static 'css/carro.css' %}">
-  <title>{%block title %}Informatica{% endblock %}</title>
+  <title>{%block title %}AL Informatica{% endblock %}</title>
 </head>
 
-<body class="bg-body">
+<body class="bg-body" style="background-color: aqua;">
   <header class="container d-flex flex-column my-3" style="height: 80px;">
-    <h1 class="font-weight-bold h1" style="color: orangered; text-shadow:3px 3px 7px#000;">Informática<span
+    <img src="../static/img/AL.png" style="width: 100px; height: auto" alt="">
+    <h1 class="font-weight-bold h1" style="color: rgb(8, 8, 8); text-shadow:3px 3px 7pxrgb(254, 254, 254);">Informática<span
         style="color: aliceblue;"></span></h1>
     <a href="/carrinho" class="car border ml-auto p-2"><img class="w-100" src="../static/img/carrinho.png" alt=""><span
         id="carro" class="qt"></span></a>
@@ -188,9 +189,9 @@
 
 
   {% block content %}
-  <div class="container-fluid promocao">
+  <!-- <div class="container-fluid promocao">
     <h2>PROMOÇÕES DA SEMANA</h2>
-  </div>
+  </div> -->
 
   <div class="container card-produto">
     {% for produto in produto %}
